@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:vibration/vibration.dart';
+import 'package:camera/camera.dart';
+
 import 'text_Screen.dart';
 import 'money_Screen.dart' as money;
 import 'object_Screen.dart' as object;
-import 'package:camera/camera.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomeCenterScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -19,27 +21,46 @@ class _WelcomeCenterScreenState extends State<WelcomeCenterScreen> {
   List<CameraDescription> get cameras => widget.cameras;
   int currentIndex = 0;
 
-  final List<String> features = [
-    "Welcome Page",
-    "Money Recognition",
-    "Text Recognition",
-    "Object Detection",
-  ];
+  List<String> features = [];
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final locale = AppLocalizations.of(context)!;
+
+    features = [
+      locale.welcome,
+      locale.moneyRecognition,
+      locale.textRecognition,
+      locale.objectDetection,
+    ];
+
+    _speakFeature();
+  }
 
   @override
   void initState() {
     super.initState();
-    _speakFeature();
   }
 
   Future<void> _speakFeature() async {
     await tts.stop();
-    if (currentIndex == 0) {
-      await tts.speak(
-        "Welcome to BASIRA. Swipe left to begin exploring features.",
-      );
+
+    Locale currentLocale = Localizations.localeOf(context);
+    if (currentLocale.languageCode == 'ar') {
+      await tts.setLanguage('ar-SA');
+    } else if (currentLocale.languageCode == 'fr') {
+      await tts.setLanguage('fr-FR');
     } else {
-      await tts.speak("${features[currentIndex]}. Double tap to activate.");
+      await tts.setLanguage('en-US');
+    }
+
+    if (currentIndex == 0) {
+      await tts.speak(AppLocalizations.of(context)!.welcome);
+    } else {
+      await tts.speak(
+        "${features[currentIndex]}. ${AppLocalizations.of(context)!.doubleTap}",
+      );
     }
   }
 
@@ -108,6 +129,8 @@ class _WelcomeCenterScreenState extends State<WelcomeCenterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
+
     return GestureDetector(
       onHorizontalDragEnd: (details) {
         if (details.primaryVelocity! < 0) {
@@ -119,7 +142,7 @@ class _WelcomeCenterScreenState extends State<WelcomeCenterScreen> {
       onDoubleTap: _launchFeature,
       onLongPress: _speakFeature,
       child: Scaffold(
-        appBar: AppBar(title: const Text('BASIRA')),
+        appBar: AppBar(title: Text(locale.appTitle)),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -157,8 +180,8 @@ class _WelcomeCenterScreenState extends State<WelcomeCenterScreen> {
                     children: [
                       Text(
                         currentIndex == 0
-                            ? 'Welcome to BASIRA.\n\nSwipe left to begin exploring features.'
-                            : 'Current: ${features[currentIndex]}\n\nSwipe left or right to change feature.\nDouble tap to activate.',
+                            ? locale.welcome
+                            : '${features[currentIndex]}\n\n${locale.swipeToChange}\n${locale.doubleTap}',
                         style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,

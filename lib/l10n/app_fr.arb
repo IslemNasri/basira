@@ -1,0 +1,9 @@
+{
+  "appTitle": "BASIRA",
+  "welcome": "Bienvenue dans Bassira. Glissez vers la gauche pour explorer les fonctionnalitées.",
+  "moneyRecognition": "Reconnaissance de l'argent",
+  "textRecognition": "Reconnaissance de texte",
+  "objectDetection": "Détection d'objets",
+  "doubleTap": "Double tap pour activer.",
+  "swipeToChange": "Glissez à gauche ou à droite pour changer la fonctionnalité."
+}

@@ -1,0 +1,9 @@
+{
+  "appTitle": "BASIRA",
+  "welcome": "Welcome to Basira. Swipe left to begin exploring features.",
+  "moneyRecognition": "Money Recognition",
+  "textRecognition": "Text Recognition",
+  "objectDetection": "Object Detection",
+  "doubleTap": "Double tap to activate.",
+  "swipeToChange": "Swipe left or right to change feature."
+}
