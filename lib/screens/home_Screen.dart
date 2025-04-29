@@ -100,7 +100,7 @@ class _WelcomeCenterScreenState extends State<WelcomeCenterScreen> {
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => TextRecognitionPage()),
+          MaterialPageRoute(builder: (_) => CameraScreen()),
         );
         break;
       case 3:

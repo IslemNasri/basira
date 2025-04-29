@@ -1,9 +1,31 @@
 {
   "appTitle": "BASIRA",
-  "welcome": "Bienvenue dans Bassira. Glissez vers la gauche pour explorer les fonctionnalitées.",
+  "welcome": "Bienvenue dans Bassira. Glissez vers la gauche pour explorer la fonctionnalité.",
   "moneyRecognition": "Reconnaissance de l'argent",
   "textRecognition": "Reconnaissance de texte",
   "objectDetection": "Détection d'objets",
   "doubleTap": "Double tap pour activer.",
-  "swipeToChange": "Glissez à gauche ou à droite pour changer la fonctionnalité."
+  "swipeToChange": "Glissez à gauche ou à droite pour changer la fonctionnalité.",
+  "alignTextWithFrame": "Alignez le texte avec le cadre",
+  "readingDetectedText": "Lecture du texte détecté...",
+  "autoCapturingInProgress": "Capture automatique en cours...",
+  "helpInstructions": "Cette application vous aide à scanner du texte. Déplacez votre appareil jusqu'à entendre 'Texte bien positionné', puis maintenez-le stable pour la capture automatique ou double tapez pour capturer manuellement.",
+  "textTooSmall": "Le texte est trop petit. Approchez-vous.",
+  "textTooLarge": "Le texte est trop grand. Éloignez-vous.",
+  "moveDirection": "Déplacez-vous {magnitude} vers {direction}.",
+  "adjustSlightlyDirection": "Ajustez légèrement vers {direction}.",
+  "textWellPositioned": "Le texte est bien positionné.",
+  "directionRight": "droite",
+  "directionLeft": "gauche",
+  "directionUp": "haut",
+  "directionDown": "bas",
+  "aLot": "beaucoup",
+  "aBit": "un peu",
+  "cameraReadyMessage": "Caméra prête. Déplacez votre appareil pour trouver du texte.",
+  "noTextFoundMessage": "Aucun texte trouvé. Déplacez votre appareil pour trouver du texte.",
+  "autoCapturingImage": "Capture automatique de l'image.",
+  "capturingImage": "Capture de l'image.",
+  "processingErrorMessage": "Une erreur s'est produite lors du traitement de l'image."
+
+
 }
