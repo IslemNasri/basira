@@ -41,7 +41,7 @@ class _CameraScreenState extends State<CameraScreen>
   // Auto-capture variables
   bool _isWellPositioned = false;
   int _wellPositionedFrameCount = 0;
-  final int _framesNeededForAutocapture = 3;
+  final int _framesNeededForAutocapture = 1;
 
   // Enhanced positioning info
   double _horizontalOffsetPercent = 0;
@@ -597,8 +597,8 @@ class _CameraScreenState extends State<CameraScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Text Recognition App'),
-        backgroundColor: Colors.black.withOpacity(0.7),
+        
+        backgroundColor: Colors.black.withOpacity(0.5),
         actions: [
           // Help button
           IconButton(

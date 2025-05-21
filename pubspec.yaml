@@ -1,12 +1,11 @@
-name: basira
+name: basiraaa
 description: "A new Flutter project."
 publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.2
-
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -14,7 +13,6 @@ dependencies:
   logger: ^2.0.0
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
-
 
   permission_handler: ^11.4.0
   flutter_tts: ^4.2.2
@@ -37,27 +35,28 @@ dependencies:
   http: ^1.3.0
   sensors_plus: ^3.0.3
   just_audio: ^0.9.34
+  speech_to_text: ^7.0.0
+  flutter_speech: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.11.0
+
 flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/basira.png"
 
-  flutter_lints: ^5.0.0
+flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
   generate: true
   assets:
   - assets/
-  - assets/tessdata/eng.traineddata
-  - assets/tessdata/ara.traineddata
-  - assets/tessdata/fra.traineddata
-  - assets/models/yolov8n.tflite
-  - assets/models/labels.txt
+  - assets/models/bestlast_float16.tflite
+  - assets/models/newlabels.txt
   - assets/icons/money.png
   - assets/icons/obj.png
   - assets/icons/text.png
